@@ -63,9 +63,14 @@
             justify-content: center;
             align-items: center;
             height: 100vh;
-            background: #ccc;
+            width: 100vw;
+            background: #000;
             transition: opacity 2s ease-in-out;
-            z-index: 1;
+            opacity: 0;
+            z-index: 2;
+            position: fixed;
+            top: 0;
+            left: 0;
         }
         iframe {
             max-width: 100%;
@@ -92,12 +97,9 @@
         document.addEventListener('DOMContentLoaded', function() {
             setTimeout(function() {
                 document.querySelector('.animation-container').style.opacity = 0;
-            }, 2000);
-
-            setTimeout(function() {
                 document.querySelector('.iframe-container').style.display = 'flex';
                 document.querySelector('.iframe-container').style.opacity = 1;
-            }, 3000);
+            }, 2000); // Измените время на необходимое для завершения анимации текста
         });
     </script>
 </body>
