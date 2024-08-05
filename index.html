@@ -4,6 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Стеклянный Чат в Телеграм</title>
+    
+    <!-- Open Graph meta tags for Telegram preview -->
+    <meta property="og:title" content="NEWS RDC - Стеклянный Чат в Телеграм">
+    <meta property="og:description" content="В стеклянном чате произошло что-то интересное. Узнайте больше, посмотрев это видео!">
+    <meta property="og:image" content="https://example.com/preview-image.jpg"> <!-- Замените на URL изображения предпросмотра -->
+    <meta property="og:url" content="https://example.com/page"> <!-- Замените на URL вашей страницы -->
+    
     <style>
         body {
             margin: 0;
@@ -35,8 +42,9 @@
             background: #000;
             color: #fff;
             overflow: hidden;
-            opacity: 0;
+            opacity: 1;
             transition: opacity 2s ease-in-out;
+            z-index: 1;
         }
         .animation-text {
             position: absolute;
@@ -57,6 +65,7 @@
             height: 100vh;
             background: #ccc;
             transition: opacity 2s ease-in-out;
+            z-index: 1;
         }
         iframe {
             max-width: 100%;
@@ -82,13 +91,13 @@
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             setTimeout(function() {
-                document.querySelector('.animation-container').style.opacity = 1;
-            }, 0);
+                document.querySelector('.animation-container').style.opacity = 0;
+            }, 2000);
 
             setTimeout(function() {
                 document.querySelector('.iframe-container').style.display = 'flex';
                 document.querySelector('.iframe-container').style.opacity = 1;
-            }, 2000);
+            }, 3000);
         });
     </script>
 </body>
