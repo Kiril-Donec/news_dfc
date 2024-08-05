@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Стеклянный Чат в Телеграм</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            overflow: hidden;
+        }
+        .preview {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background: #fff;
+            color: #000;
+            text-align: center;
+        }
+        .preview h1, .preview p {
+            margin: 0;
+        }
+        .animation-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #000;
+            color: #fff;
+            overflow: hidden;
+            opacity: 0;
+            transition: opacity 2s ease-in-out;
+        }
+        .animation-text {
+            position: absolute;
+            top: 0;
+            width: 100%;
+            text-align: center;
+            animation: fall 2s forwards;
+        }
+        @keyframes fall {
+            to {
+                transform: translateY(100vh);
+            }
+        }
+        .iframe-container {
+            display: none;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: #ccc;
+            transition: opacity 2s ease-in-out;
+        }
+        iframe {
+            max-width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="preview">
+        <h1>NEWS RDC</h1>
+        <p>В стеклянном чате произошло...</p>
+    </div>
+    <div class="animation-container">
+        <div class="animation-text">
+            <h1>Стеклянный Чат в Телеграм</h1>
+            <p>Там фигня происходит и там весело!</p>
+        </div>
+    </div>
+    <div class="iframe-container">
+        <iframe width="932" height="524" src="https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1" title="Rick Astley - Never Gonna Give You Up (Official Music Video)" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            setTimeout(function() {
+                document.querySelector('.animation-container').style.opacity = 1;
+            }, 0);
+
+            setTimeout(function() {
+                document.querySelector('.iframe-container').style.display = 'flex';
+                document.querySelector('.iframe-container').style.opacity = 1;
+            }, 2000);
+        });
+    </script>
+</body>
+</html>
